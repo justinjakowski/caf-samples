@@ -7,3 +7,6 @@ This repo is for reviewing potential docs which will end up in CAF
 [Migrating PostgreSQL to Azure (Scenario)](./postgresql-to-azure.md) <br>
 [Migrating MySQL to Azure (Scenario)](./mysql-to-azure.md) <br>
 [Migrating MariaDB to Azure (Scenario)](./mariadb-to-azure.md) <br>
+
+# VMWare Docs to Review
+[Moving on-premises VMware infrastructure to Azure (Scenario)](./vmware-to-azure-migration-scenario.md)
