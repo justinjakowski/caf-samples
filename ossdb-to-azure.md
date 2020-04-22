@@ -1,4 +1,4 @@
-# Migrating Open Source Databases to Azure
+# Migrating Open Source Databases to Azure (Scenario)
 
 This article demonstrates how a fictional company Contoso assessed, planned and migrated their various on-premises open source databases to Azure.
 

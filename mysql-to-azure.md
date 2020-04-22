@@ -1,4 +1,4 @@
-# Migrating MySQL to Azure
+# Migrating MySQL to Azure (Scenario)
 
 This article demonstrates how a fictional company Contoso planned and migrated their on-premises MySQL open source database platform to Azure.
 

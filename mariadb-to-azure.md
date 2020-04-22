@@ -1,4 +1,4 @@
-# Migrating MariaDB to Azure
+# Migrating MariaDB to Azure (Scenario)
 
 This article demonstrates how a fictional company Contoso planned and migrated their on-premises MariaDB open source database platform to Azure.  
 

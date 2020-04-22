@@ -1,4 +1,4 @@
-# Migrating PostgreSQL to Azure
+# Migrating PostgreSQL to Azure (Scenario)
 
 This article demonstrates how a fictional company Contoso planned and migrated their on-premises PostgreSQL open source database platform to Azure.
 
