@@ -6,7 +6,6 @@ Contoso has several options available when migrating VMware virtual machines (VM
 --- | ---
 [**Azure Migrate**](https://azure.microsoft.com/en-us/services/azure-migrate/) | [Assess](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware) and [migrate](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware) on-premises VMs.<br/><br/>Run workloads using Azure IaaS. <br/><br/> Manage VMs with [Azure Resource Manager](https://azure.microsoft.com/en-us/features/resource-manager/).
 [**Azure VMware Solutions**](https://azure.microsoft.com/en-us/overview/azure-vmware/) | Use VMware HCX or vMotion to move on-premises VMs.<br/><br/> Run native VMware workloads on Azure bare metal hardware.<br/><br/> Manage VMs using vSphere.
-|
 
 Azure VMware Solutions is used to create a Private Cloud in Azure with native access to VMware vCenter, and other tools supported by VMware for workload migration. Contoso can then confidently use Azure VMware Solutions, knowing that they're first-party Microsoft offerings backed by VMware.
 
