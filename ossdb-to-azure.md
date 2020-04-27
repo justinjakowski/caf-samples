@@ -116,7 +116,7 @@ If Contoso were to evaluate moving the applications at a later date, the [five R
 As each database workload was discovered, the Database Migration Assessment (DMA) tool was utilized to determine what features were being used. When DMA was not able to be executed on a data source, the following guidelines were followed on the database migrations.
 
 **Database Type** | **Details** | **Target** | **Migration Guide**
---- | --- | --- | ---| --- | ---|
+--- | --- | --- | ---| --- |
 **MySQL** | All supported versions, upgrade to a supported version before migration | MySQL Database for Azure (Paas) | [Link](https://docs.microsoft.com/en-us/azure/dms/tutorial-mysql-azure-mysql-online)
 **PostgreSQL** | All supported versions, upgrade to a supported version before migration | PostgreSQL Database for Azure (PaaS) | [Link](https://docs.microsoft.com/en-us/azure/dms/tutorial-postgresql-azure-postgresql-online)
 **MariaDB** | All supported versions, upgrade to a supported version before migration | MariaDB Database for Azure (PaaS) | [Link](https://datamigration.microsoft.com/scenario/mariadb-to-azuremariadb?step=1)
