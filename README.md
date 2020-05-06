@@ -10,3 +10,6 @@ This repo is for reviewing potential docs which will end up in CAF
 
 # VMWare Docs to Review
 [Moving on-premises VMware infrastructure to Azure (Scenario)](./vmware-to-azure-migration-scenario.md)
+
+# VDI Docs to Review
+[Moving on-premises Remote Desktop Services to Azure Windows Virtual Desktop](./rds-to-wvd.md)
