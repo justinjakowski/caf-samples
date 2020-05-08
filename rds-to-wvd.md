@@ -1,7 +1,5 @@
 # Moving on-premises Remote Desktop Services to Azure Windows Virtual Desktop (Scenario)
 
-
-
 **Migration Options** | **Outcome**
 --- | ---
 [**Azure Migrate**](https://azure.microsoft.com/en-us/services/azure-migrate/) | Assess and migrate on-premises RDS environment.<br/><br/>Run workloads using Azure WVD. <br/><br/> Manage WVD with [WVD Management UX](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/wvd-management-ux).|
@@ -70,7 +68,6 @@ Contoso evaluates the proposed design by putting together a pros and cons list.
 --- | ---
 Pros | Windows 10 multi-session environment<br/><br/>Cloud based allowing access from anywhere<br/><br/>Take advantage of other Azure services like Azure Files with your WVD environment.<br/><br/>Optimized for the Microsoft Modern Desktop
 Cons | To fully optimize for Azure contos may want to rebuild Windows 10 images optimized for multi-user sessions<br/><br/>Windows Virtual Desktop doesn't support User Profile Disks, so these will need to be migrated to FSLogix Profile Containers.
-|
 
 ## Migration process
 
