@@ -16,3 +16,6 @@ This repo is for reviewing potential docs which will end up in CAF
 
 # VDI Docs to Review
 [Moving on-premises Remote Desktop Services to Azure Windows Virtual Desktop](./rds-to-wvd.md)
+
+# DevTest Docs to Review
+[Rehost DevTest on Azure VMs with Azure Migrate](./dt-to-iaas.md)

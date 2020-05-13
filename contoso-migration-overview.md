@@ -3,7 +3,7 @@ title: "Overview of application migration examples for Azure"
 description: Provides an overview of the application migration examples included as part of the Cloud Adoption Framework Migrate section.
 author: deltadan
 ms.author: abuck
-ms.date: 04/02/2020
+ms.date: 05/13/2020
 ms.topic: conceptual
 ms.service: cloud-adoption-framework
 ms.subservice: migrate
@@ -17,9 +17,9 @@ This section of the Cloud Adoption Framework provides examples of several common
 
 ## Introduction
 
-Azure provides access to a comprehensive set of cloud services. As developers and IT professionals, you can use these services to build, deploy, and manage applications on a range of tools and frameworks, through a global network of datacenters. As your business faces challenges associated with the digital shift, the Azure cloud helps you to figure out how to optimize resources and operations, engage with your customers and employees, and transform your products.
+Azure provides access to a comprehensive set of cloud services. As developers and IT professionals, you can use these services to build, deploy, and manage applications on a range of tools and frameworks, through a global network of data centers. As your business faces challenges associated with the digital shift, the Azure cloud helps you to figure out how to optimize resources and operations, engage with your customers and employees, and transform your products.
 
-However, Azure recognizes that even with all the advantages that the cloud provides in terms of speed and flexibility, minimized costs, performance, and reliability, many organizations are going to need to run on-premises datacenters for some time to come. In response to cloud adoption barriers, Azure provides a hybrid cloud strategy that builds bridges between your on-premises datacenters, and the Azure public cloud. For example, using Azure cloud resources like Azure Backup to protect on-premises resources, or using Azure analytics to gain insights into on-premises workloads.
+However, Azure recognizes that even with all the advantages that the cloud provides in terms of speed and flexibility, minimized costs, performance, and reliability, many organizations are going to need to run on-premises data centers for some time to come. In response to cloud adoption barriers, Azure provides a hybrid cloud strategy that builds bridges between your on-premises data centers, and the Azure public cloud. For example, using Azure cloud resources like Azure Backup to protect on-premises resources, or using Azure analytics to gain insights into on-premises workloads.
 
 As part of the hybrid cloud strategy, Azure provides growing solutions for migrating on-premises apps and workloads to the cloud. With simple steps, you can comprehensively assess your on-premises resources to figure out how they'll run in the Azure cloud. Then, with a deep assessment in hand, you can confidently migrate resources to Azure. When resources are up and running in Azure, you can optimize them to retain and improve access, flexibility, security, and reliability.
 
@@ -92,7 +92,7 @@ The articles in the series are summarized below.
 
 **Article** | **Details**
 --- | ---
-[Migrate DevTest to Azure IaaS](https://github.com/deltadan/caf-samples/blob/master/dt-to-iaas.md) | In this example Contoso moves their DevTest workloads to Azure IaaS.
+[Migrate DevTest to Azure IaaS](https://github.com/deltadan/caf-samples/blob/master/dt-to-iaas.md) | This article demonstrates how the Contoso rehosts their DevTest environment for two applications running on VMware VMs, by migrating to Azure VMs.
 [Migrating to Azure DevTest Labs](https://github.com/deltadan/caf-samples/blob/master/dt-to-labs.md)  | This article discusses how Contoso moves their DevTest workloads to Azure using DevTest Labs.
 
 ### ASP.NET, PHP web apps
