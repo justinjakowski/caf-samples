@@ -71,7 +71,6 @@ Contoso evaluates the proposed design by putting together a pros and cons list.
 --- | ---
 Pros | Bare metal VMware infrastructure with high performance. Infrastructure that is fully dedicated to Contoso and is physically isolated from infrastructure of other customers.<br/><br/>Since Contoso is using a rehost using VMware there is, no special configuration or migration complexity.<br/><br/>Contoso can take advantage of their investment in Software Assurance, using the Azure Hybrid Benefit and extended support for legacy Windows and SQL platforms.<br/><br/>Contoso will retain full control of the app VMs in Azure.
 Cons | Contoso will need to continue supporting the app as VMware VMs rather than moving them to a managed service such as Azure App Service and Azure SQL Database.<br/><br/>Azure VMware Solutions are provisioned and priced based on a minimum of three large nodes rather than individual VMs in Azure IaaS. Learn more about the [pricing](https://azure.microsoft.com/en-us/pricing/details/azure-vmware-cloudsimple/) of AVS.
-|
 
 ## Migration process
 
