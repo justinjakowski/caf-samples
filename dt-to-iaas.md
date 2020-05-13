@@ -44,15 +44,15 @@ After pinning down goals and requirements, Contoso designs and reviews a deploym
 
 ### Current app
 
-- The DevTest VMs for the two applications are running on VMs is tiered across a VMs (**WEBVMDEV**,  **SQLVMDEV**, **OSTICKETWEBDEV**, **OSTICKETMYSQLDEV**). These VMs are used for development prior to code being promoted to the production VMs.
+- The DevTest VMs for the two applications are running on VMs (**WEBVMDEV**,  **SQLVMDEV**, **OSTICKETWEBDEV**, **OSTICKETMYSQLDEV**). These VMs are used for development prior to code being promoted to the production VMs.
 - The VMs are located on VMware ESXi host **contosohost1.contoso.com** (version 6.5).
 - The VMware environment is managed by vCenter Server 6.5 (**vcenter.contoso.com**), running on a VM.
 - Contoso has an on-premises data center (contoso-datacenter), with an on-premises domain controller (**contosodc1**).
 
 ### Proposed architecture
 
-- Since the VMs are used for DevTest, the dev VMs in Azure will reside in the development resource group ContosoDevRG.
-- The VMs will be migrated to the primary Azure region (East US 2) and placed in the development network (VNET-DEV-EUS2).
+- Since the VMs are used for DevTest, in Azure they will reside in the development resource group ContosoDevRG.
+- The VMs will be migrated to the primary Azure region (East US 2) and placed in the development virtual network (VNET-DEV-EUS2).
 - The web front-end VMs will reside in the front-end subnet (DEV-FE-EUS2) in the development network.
 - The database VM will reside in the database subnet (DEV-DB-EUS2) in the development network.
 - The on-premises VMs in the Contoso data-center will be decommissioned after the migration is done.
@@ -61,11 +61,11 @@ After pinning down goals and requirements, Contoso designs and reviews a deploym
 
 ### Database considerations
 
-To support ongoing development Contoso has decided to continue development of these two solutions using the existing VMs, migrated to Azure.  In the future, Contoso will pursue the use of PaaS services such as [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) and [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/).
+To support ongoing development Contoso has decided to continue use of the existing VMs, migrated to Azure.  In the future, Contoso will pursue the use of PaaS services such as [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) and [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/).
 
-- Database VMs will be migrated as is without changes
-- With the use of the Azure Dev/Test subscription offer, the Windows and SQL Servers will not incur licensing fees which will keep the compute costs to a minimum
-- In the future, Contoso will look to integrate their development with PaaS Services
+- Database VMs will be migrated as is without changes.
+- With the use of the Azure Dev/Test subscription offer, the Windows and SQL Servers will not incur licensing fees which will keep the compute costs to a minimum.
+- In the future, Contoso will look to integrate their development with PaaS Services.
 
 ### Solution review
 
@@ -137,10 +137,10 @@ They set these up as follows:
 
 1. Set up a network-Contoso already set up a network that can be for Azure Migrate Server Migration when they [deployed the Azure infrastructure](./contoso-migration-infrastructure.md)
 
-    - The SmartHotel360 app is a production app, and the VMs will be migrated to the Azure production network (VNET-PROD-EUS2) in the primary East US 2 region.
-    - Both VMs will be placed in the ContosoRG resource group, which is used for production resources.
-    - The app front-end VM (WEBVM) will migrate to the front-end subnet (PROD-FE-EUS2), in the production network.
-    - The app database VM (SQLVM) will migrate to the database subnet (PROD-DB-EUS2), in the production network.
+    - The VMs to be migrated are used for development, thus the VMs will be migrated to the Azure development virtual network (VNET-DEV-EUS2), in the primary East US 2 region.
+    - Both VMs will be placed in the ContosoDevRG resource group, which is used for development resources.
+    - The app front-end VMs (WEBVMDEV and OSTICKETWEBDEV) will migrate to the front-end subnet (DEV-FE-EUS2), in the development virtual network.
+    - The app database VM (SQLVMDEV and OSITCKETMYSQLDEV) will migrate to the database subnet (DEV-DB-EUS2), in the development virtual network.
 
 2. Provision the Azure Migrate Server Migration tool.
 
@@ -181,6 +181,7 @@ After migration, Contoso wants to connect to the Azure VMs and allow Azure to ma
     - Enable RDP or SSH on the on-premises VM before migration.
     - Ensure that TCP and UDP rules are added for the **Public** profile.
     - Check that RDP or SSH is allowed in the operating system firewall.
+    - For install SSH by using the following command: **Sudo apt-get ssh install -y**.
 
 2. For access over site-to-site VPN, they:
 
@@ -188,9 +189,10 @@ After migration, Contoso wants to connect to the Azure VMs and allow Azure to ma
     - Check that RDP or SSH is allowed in the operating system firewall.
     - For windows, Set the operating system's SAN policy on the on-premises VM to **OnlineAll**.
 
-3. Install the Azure agent.
+3. Install the Azure agents.
 
     - [Azure Windows Agent](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows)
+    - [Azure Linux Agent](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux)
 
 4. Miscellaneous
 
@@ -232,6 +234,9 @@ With discovery completed, you can begin replication of VMware VMs to Azure.
 
     - Select **No** if you don't want to apply Azure Hybrid Benefit. Then select **Next**.
     - Select **Yes** if you have Windows Server machines that are covered with active Software Assurance or Windows Server subscriptions, and you want to apply the benefit to the machines you're migrating. Then select **Next**.
+
+> ![NOTE]
+> In the case of Contoso, they will select **No** to Azure Hybrid Benefit, since this is subscription is a Dev/Test type. This means they will pay only for the compute. [Hybrid Use Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/) should only be used for production systems that have Software Assurance benefits.
 
 8. In **Compute**, review the VM name, size, OS disk type, and availability set. VMs must conform with [Azure requirements](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#vmware-requirements).
 
@@ -296,9 +301,8 @@ With migration complete, the SmartHotel360 app tiers are now running on Azure VM
 Now, Contoso needs to complete these cleanup steps:
 
 - After the migration is complete, stop replication.
-- Remove the WEBVM machine from the vCenter inventory.
-- Remove the SQLVM machine from the vCenter inventory.
-- Remove WEBVM and SQLVM from local backup jobs.
+- Remove the WEBVMDEV, SQLVMDEV, OSTICKETWEBDEV, and OSTICKETMYSQLDEV VMs from the vCenter inventory.
+- Remove all the VMs from from local backup jobs.
 - Update internal documentation to show the new location, and IP addresses for the VMs.
 - Review any resources that interact with the VMs, and update any relevant settings or documentation to reflect the new configuration.
 
@@ -324,9 +328,9 @@ For business continuity and disaster recovery (BCDR), Contoso takes the followin
 
 ### Licensing and cost optimization
 
-- Contoso has existing licensing for their VMs, and will take advantage of the Azure Hybrid Benefit. Contoso will convert the existing Azure VMs, to take advantage of this pricing.
+- Contoso will ensure that all development Azure resources are created using this DevTest subscription to take advantage of the 80% savings.
 - Contoso will enable [Azure Cost Management](https://docs.microsoft.com/azure/cost-management-billing/cost-management-billing-overview) to help monitor and manage the Azure resources.
 
 ## Conclusion
 
-In this article, Contoso rehosted the SmartHotel360 app in Azure by migrating the app VMs to Azure VMs using the Azure Migrate Server Migration tool.
+In this article, Contoso rehosted the development VMs used for their SmartHotel360 and OSTICKET apps in Azure by migrating the app VMs to Azure VMs using the Azure Migrate Server Migration tool.
