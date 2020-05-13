@@ -16,7 +16,7 @@ services: azure-migrate
 
 This article demonstrates how the fictional company Contoso rehosts their DevTest environment for two applications running on VMware VMs, by migrating to Azure VMs.
 
-The SmartHotel360 and OSTICKET apps used in this example are open source.  You can download them from your own testing purposes from [GitHub](https://github.com/Microsoft/SmartHotel360) or [GitHub](https://github.com/osTicket/osTicket).
+The [SmartHotel360](https://github.com/Microsoft/SmartHotel360) and [OSTICKET](https://github.com/osTicket/osTicket) apps used in this example are open source.  You can download them from your own testing purposes.
 
 ## Business drivers
 
