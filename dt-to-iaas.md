@@ -296,7 +296,7 @@ Now Contoso admins run a full migration.
 
 ## Clean up after migration
 
-With migration complete, the SmartHotel360 app tiers are now running on Azure VMs.
+With migration complete, the development VMs for both the SmartHotel360 and OSTICKET appss are now running on Azure VMs.
 
 Now, Contoso needs to complete these cleanup steps:
 
