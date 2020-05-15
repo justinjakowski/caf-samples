@@ -119,8 +119,8 @@ The articles in the series are summarized below.
 --- | ---
 [Moving on-premises VMware infrastructure to Azure](https://github.com/deltadan/caf-samples/blob/master/vmware-to-azure-migration-scenario.md) | This article provides an example ofmoving an on-premises VMware® VMs to Azure using Azure VMware Solutions.
 [Azure NetApp Files](https://azure.microsoft.com/en-us/services/netapp/) | Enterprise file storage, powered by NetApp®. Run Linux and Windows file workloads in Azure.
-[Oracle on Azure](https://azure.microsoft.com/en-us/solutions/oracle/) | Run your Oracle® Database and enterprise applications on Azure and Oracle Cloud.
-[CRAY on Azure](https://azure.microsoft.com/en-us/solutions/high-performance-computing/cray/)  | High Performance Computing with Cray® on Azure. A dedicated supercomputer on your virtual network. 
+[Oracle on Azure](https://azure.microsoft.com/en-us/solutions/oracle/) | Run your Oracle® Database and enterprise applications n Azure and Oracle Cloud.
+[CRAY in Azure](https://azure.microsoft.com/en-us/solutions/high-performance-computing/cray/)  | High Performance Computing with Cray® in Azure. A dedicated supercomputer on your virtual network. 
 
 ### VDI
 
