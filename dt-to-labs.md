@@ -13,7 +13,7 @@ services: azure-migrate
 <!-- cSpell:ignore deltadan contoso contoso's host vcenter contosodc NSGs agentless -->
 
 # Moving DevTest to Azure using DevTest Labs (Scenario)
-This article demonstrates how the fictional company Contoso rehosts their DevTest environment for two applications running on VMware VMs, by migrating to Azure VMs.
+This article demonstrates how the fictional company Contoso moves their DevTest environment to Azure using DevTest Labs.
 
 ## Migration Options
 
