@@ -22,7 +22,7 @@ Contoso has several options available when moving DevTest to Azure.
 [**Azure DevTest Labs**](https://azure.microsoft.com/services/devtest-lab/) | Quickly provision development and test environments<br/><br/> Minimize waste with quotas and policies<br/><br/> Set automated shutdowns to minimize costs <br/><br/>Build Windows and Linux environments
 
 > [NOTE]:
-> This article focuses on using Azure Windows Virtual Desktop (WVD) service, to move on-premises RDS environment to Azure. Read how Contoso moved [DevTest to Azure using IaaS](./dt-to-iaas.md).
+> This article focuses on using the Azure DevTest Labs service, to move an on-premises DevTest environment to Azure. Read how Contoso moved [DevTest to Azure using IaaS](./dt-to-iaas.md) using Azure Migrate.
 
 
 # Move DevTest to Azure using DevTest Labs
