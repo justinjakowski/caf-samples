@@ -6,7 +6,8 @@
 
 Windows Virtual Desktop (WVD) is a comprehensive desktop and app virtualization service running in the cloud. It’s the only virtual desktop infrastructure (VDI) that delivers simplified management, multi-session Windows 10, optimizations for Microsoft 365 Apps for enterprise, and support for Remote Desktop Services (RDS) environments. Deploy and scale your Windows desktops and apps on Azure in minutes, and get built-in security and compliance features.
 
->Note: This article focuses on using Azure Windows Virtual Desktop (WVD) service, to move on-premises RDS environment to Azure.
+> ![NOTE]
+> This article focuses on using Azure Windows Virtual Desktop (WVD) service, to move on-premises RDS environment to Azure.
 
 ## Business drivers
 

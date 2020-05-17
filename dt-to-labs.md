@@ -18,11 +18,14 @@ Contoso has several options available when moving DevTest to Azure.
 
 **Migration Options** | **Outcome**
 --- | ---
-[**Azure Migrate**](https://azure.microsoft.com/en-us/services/azure-migrate/) | [Assess](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware) and [migrate](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware) on-premises VMs.<br/><br/>Run workloads using Azure IaaS. <br/><br/> Manage VMs with [Azure Resource Manager](https://azure.microsoft.com/en-us/features/resource-manager/).
-[**Azure VMware Solutions**](https://azure.microsoft.com/en-us/overview/azure-vmware/) | Use VMware HCX or vMotion to move on-premises VMs.<br/><br/> Run native VMware workloads on Azure bare metal hardware.<br/><br/> Manage VMs using vSphere.
+[**Azure Migrate**](https://azure.microsoft.com/services/azure-migrate/) | [Assess](https://docs.microsoft.com/azure/migrate/tutorial-assess-vmware) and [migrate](https://docs.microsoft.com/azure/migrate/tutorial-migrate-vmware) on-premises VMs.<br/><br/>Run DevTest Servers using Azure IaaS. <br/><br/> Manage VMs with [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/).
+[**Azure DevTest Labs**](https://azure.microsoft.com/services/devtest-lab/) | Quickly provision development and test environments<br/><br/> Minimize waste with quotas and policies<br/><br/> Set automated shutdowns to minimize costs <br/><br/>Build Windows and Linux environments
+
+> [NOTE]:
+> This article focuses on using Azure Windows Virtual Desktop (WVD) service, to move on-premises RDS environment to Azure. Read how Contoso moved [DevTest to Azure using IaaS](./dt-to-iaas.md).
 
 
-# Rehost on-premises DevTest environment on Azure VMs
+# Move DevTest to Azure using DevTest Labs
 
 This article demonstrates how the fictional company Contoso rehosts their DevTest environment for two applications running on VMware VMs, by migrating to Azure VMs.
 
@@ -38,7 +41,7 @@ The Development Leadership team has outlined what they want to achieve with this
 - Save costs by moving all DevTest environments out of their data center, and no longer purchase hardware to develop software.
 
 > ![NOTE]
-> Contoso will leverage the Pay-As-You-Go [Dev/Test subscription offer](https://azure.microsoft.com/en-us/offers/ms-azr-0023p/) for their environments. Each active Visual Studio subscriber on their team can use the Microsoft software included with their subscription on Azure Virtual Machines for DevTest at no extra charge. Contoso will just pay the Linux rate for VMs they run, even VMs with SQL Server, SharePoint Server, or other software that is normally billed at a higher rate. 
+> Contoso will leverage the Pay-As-You-Go [Dev/Test subscription offer](https://azure.microsoft.com/offers/ms-azr-0023p/) for their environments. Each active Visual Studio subscriber on their team can use the Microsoft software included with their subscription on Azure Virtual Machines for DevTest at no extra charge. Contoso will just pay the Linux rate for VMs they run, even VMs with SQL Server, SharePoint Server, or other software that is normally billed at a higher rate. 
 
 ## Migration goals
 
@@ -119,7 +122,7 @@ Here's what Contoso needs to run this scenario.
 
 **Requirements** | **Details**
 --- | ---
-**Azure Dev/Test subscription** | Contoso creates a [DevTest subscription](https://azure.microsoft.com/en-us/offers/ms-azr-0023p/) to take advantage of up to 80% reduction in costs.<br/><br/> If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/free-trial).<br/><br/> If you create a free account, you're the administrator of your subscription and can perform all actions.<br/><br/> If you use an existing subscription and you're not the administrator, you need to work with the admin to assign you Owner or Contributor permissions.<br/><br/> If you need more granular permissions, review [this article](https://docs.microsoft.com/azure/site-recovery/site-recovery-role-based-linked-access-control).
+**Azure Dev/Test subscription** | Contoso creates a [DevTest subscription](https://azure.microsoft.com/offers/ms-azr-0023p/) to take advantage of up to 80% reduction in costs.<br/><br/> If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/free-trial).<br/><br/> If you create a free account, you're the administrator of your subscription and can perform all actions.<br/><br/> If you use an existing subscription and you're not the administrator, you need to work with the admin to assign you Owner or Contributor permissions.<br/><br/> If you need more granular permissions, review [this article](https://docs.microsoft.com/azure/site-recovery/site-recovery-role-based-linked-access-control).
 **Azure infrastructure** | [Learn how](./contoso-migration-infrastructure.md) Contoso set up an Azure infrastructure.<br/><br/> Learn more about specific [prerequisites](https://docs.microsoft.com/azure/migrate/dt-to-iaas#prerequisites) requirements for Azure Migrate Server Migration.
 **On-premises servers** | On-premises vCenter Servers should be running version 5.5, 6.0, 6.5 or 6.7<br/><br/> ESXi hosts should run version 5.5, 6.0, 6.5 or 6.7<br/><br/> One or more VMware VMs should be running on the ESXi host.
 

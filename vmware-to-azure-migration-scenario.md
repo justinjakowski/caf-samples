@@ -9,7 +9,8 @@ Contoso has several options available when migrating VMware virtual machines (VM
 
 Azure VMware Solutions is used to create a Private Cloud in Azure with native access to VMware vCenter, and other tools supported by VMware for workload migration. Contoso can then confidently use Azure VMware Solutions, knowing that they're first-party Microsoft offerings backed by VMware.
 
->Note: This article focuses on using Azure VMware Solutions (AVS), to move on-premises VMware environment VMs to Azure.
+> ![NOTE]
+> This article focuses on using Azure VMware Solutions (AVS), to move on-premises VMware environment VMs to Azure.
 
 ## Business drivers
 
@@ -84,7 +85,8 @@ Contoso will move VMs to AVS using the VMware HCX tool. The VMs will run in an A
 
     ![Migration process](/media/vmware-to-azure-migration-scenario/onpremises-vmwarehcx-azure.png)
 
-> Note: NSX-T is not a requirement, most environments will have standard VDS-based networking
+> ![NOTE]
+>  NSX-T is not a requirement, most environments will have standard VDS-based networking
 
 ## Scenarios steps
 
