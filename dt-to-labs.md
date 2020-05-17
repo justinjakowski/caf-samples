@@ -12,6 +12,16 @@ services: azure-migrate
 
 <!-- cSpell:ignore deltadan contoso contoso's host vcenter contosodc NSGs agentless -->
 
+# Moving DevTest to Azure using DevTest Labs (Scenario)
+
+Contoso has several options available when moving DevTest to Azure.
+
+**Migration Options** | **Outcome**
+--- | ---
+[**Azure Migrate**](https://azure.microsoft.com/en-us/services/azure-migrate/) | [Assess](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware) and [migrate](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware) on-premises VMs.<br/><br/>Run workloads using Azure IaaS. <br/><br/> Manage VMs with [Azure Resource Manager](https://azure.microsoft.com/en-us/features/resource-manager/).
+[**Azure VMware Solutions**](https://azure.microsoft.com/en-us/overview/azure-vmware/) | Use VMware HCX or vMotion to move on-premises VMs.<br/><br/> Run native VMware workloads on Azure bare metal hardware.<br/><br/> Manage VMs using vSphere.
+
+
 # Rehost on-premises DevTest environment on Azure VMs
 
 This article demonstrates how the fictional company Contoso rehosts their DevTest environment for two applications running on VMware VMs, by migrating to Azure VMs.
@@ -145,7 +155,6 @@ They set these up as follows:
  - Bar2
  - Bar3
 
-
  ## Step 2: Foo
 
 Here are the Azure components Contoso needs to migrate the DevTest to Azure:
@@ -248,4 +257,4 @@ For business continuity and disaster recovery (BCDR), Contoso takes the followin
 
 ## Conclusion
 
-In this article, Contoso moved the development VMs used for their apps by adopting Azure DevTest Labs. They also implemented Windows Virtual Desktop as a platform for remote and contract developers.
+In this article, Contoso moved their development environments to Azure DevTest Labs. They also implemented Windows Virtual Desktop as a platform for remote and contract developers.
