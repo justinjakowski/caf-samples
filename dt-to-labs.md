@@ -24,13 +24,6 @@ Contoso has several options available when moving DevTest to Azure.
 > [NOTE]:
 > This article focuses on using the Azure DevTest Labs service, to move an on-premises DevTest environment to Azure. Read how Contoso moved [DevTest to Azure using IaaS](./dt-to-iaas.md) using Azure Migrate.
 
-
-# Move DevTest to Azure using DevTest Labs
-
-This article demonstrates how the fictional company Contoso rehosts their DevTest environment for two applications running on VMware VMs, by migrating to Azure VMs.
-
-The [SmartHotel360](https://github.com/Microsoft/SmartHotel360) and [OSTICKET](https://github.com/osTicket/osTicket) apps used in this example are open source.  You can download them from your own testing purposes.
-
 ## Business drivers
 
 The Development Leadership team has outlined what they want to achieve with this migration:

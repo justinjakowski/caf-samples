@@ -17,6 +17,16 @@ services: azure-migrate
 This article demonstrates how the fictional company Contoso rehosts their DevTest environment for two applications running on VMware VMs, by migrating to Azure VMs.
 
 The [SmartHotel360](https://github.com/Microsoft/SmartHotel360) and [OSTICKET](https://github.com/osTicket/osTicket) apps used in this example are open source.  You can download them from your own testing purposes.
+**Migration Options** | **Outcome**
+--- | ---
+[**Azure Migrate**](https://azure.microsoft.com/services/azure-migrate/) | [Assess](https://docs.microsoft.com/azure/migrate/tutorial-assess-vmware) and [migrate](https://docs.microsoft.com/azure/migrate/tutorial-migrate-vmware) on-premises VMs.<br/><br/>Run DevTest Servers using Azure IaaS. <br/><br/> Manage VMs with [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/).
+[**Azure DevTest Labs**](https://azure.microsoft.com/services/devtest-lab/) | Quickly provision development and test environments<br/><br/> Minimize waste with quotas and policies<br/><br/> Set automated shutdowns to minimize costs <br/><br/>Build Windows and Linux environments
+
+> [NOTE]:
+> Read how Contoso moved [DevTest to Azure using DevTest Labs](./dt-to-labs.md).
+
+
+
 
 ## Business drivers
 
