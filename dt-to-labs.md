@@ -10,7 +10,7 @@ ms.subservice: migrate
 services: azure-migrate
 ---
 
-<!-- cSpell:ignore deltadan contoso contoso's host vcenter contosodc NSGs agentless -->
+<!-- cSpell:ignore deltadan VMware contoso contoso's host vcenter contosodc NSGs agentless -->
 
 # Moving DevTest to Azure using DevTest Labs (Scenario)
 This article demonstrates how the fictional company Contoso moves their DevTest environment to Azure using DevTest Labs.
@@ -35,6 +35,7 @@ The Development Leadership team has outlined what they want to achieve with this
 - Empower developers with access to DevOps tools and self service environments. IT will no longer be responsible for provisioning DevTest systems.
 - Ensure governance and compliance in DevTest environments.
 - Save costs by moving all DevTest environments out of their data center, and no longer purchase hardware to develop software.
+- Access to DevOps tools for CI/CD pipelines and cloud native tools for DevTest such as AI, Machine Learning and Serverless. 
 
 > ![NOTE]
 > Contoso will leverage the Pay-As-You-Go [Dev/Test subscription offer](https://azure.microsoft.com/offers/ms-azr-0023p/) for their environments. Each active Visual Studio subscriber on their team can use the Microsoft software included with their subscription on Azure Virtual Machines for DevTest at no extra charge. Contoso will just pay the Linux rate for VMs they run, even VMs with SQL Server, SharePoint Server, or other software that is normally billed at a higher rate. 
@@ -43,28 +44,27 @@ The Development Leadership team has outlined what they want to achieve with this
 
 The Contoso development team has pinned down goals for this migration. These goals are used to determine the best migration method:
 
-- Contoso wants to quickly move out of their on-premises DevTest environments.
 - After migration, Contoso's DevTest environment in Azure should have enhanced capabilities over the current system in VMware.
 - The operations model will move from IT provisioned to DevOps and with self-service provisioning.
+- Contoso wants to quickly move out of their on-premises DevTest environments.
+- All Developers to connect to DevTest environments remotely, but in a secure manor.
 
 ## Solution design
 
-After pinning down goals and requirements, Contoso designs and reviews a deployment solution, and identifies the migration process, including the Azure services that Contoso will use for the migration.
+After pinning down goals and requirements, Contoso designs and reviews a deployment solution, including the Azure services they will use for DevTest.
 
-### Current app
+### Current architecture
 
-- The DevTest VMs for the two applications are running on VMs (**WEBVMDEV**,  **SQLVMDEV**, **OSTICKETWEBDEV**, **OSTICKETMYSQLDEV**). These VMs are used for development prior to code being promoted to the production VMs.
-- The VMs are located on VMware ESXi host **contosohost1.contoso.com** (version 6.5).
-- The VMware environment is managed by vCenter Server 6.5 (**vcenter.contoso.com**), running on a VM.
-- Contoso has an on-premises data center (contoso-datacenter), with an on-premises domain controller (**contosodc1**).
+- The DevTest VMs for Contoso's applications are running on VMware in their on-premises data center.
+- These VMs are used for development and testing prior to code being promoted to the production VMs.
+- Developers maintain their own workstations, but need new solutions for connecting remotely since many of them are working from home.
 
 ### Proposed architecture
 
-- Since the VMs are used for DevTest, in Azure they will reside in the development resource group ContosoDevRG.
-- The VMs will be migrated to the primary Azure region (East US 2) and placed in the development virtual network (VNET-DEV-EUS2).
-- The web front-end VMs will reside in the front-end subnet (DEV-FE-EUS2) in the development network.
-- The database VM will reside in the database subnet (DEV-DB-EUS2) in the development network.
-- The on-premises VMs in the Contoso data-center will be decommissioned after the migration is done.
+- Contoso will use a [DevTest subscription](https://azure.microsoft.com/offers/ms-azr-0023p/) to save costs on Azure resources. This subscription offers significant savings since VMs are don't incur licensing fees for Microsoft software.
+- Azure DevTest Labs will be used for managing the DevTest environments.
+- The on-premises DevTest VMs in the Contoso data-center will be decommissioned after the migration is done.
+- Developers and Testers will have access to Windows Virtual Desktop for their workstations.
 
 ![Scenario architecture](./media/dt-to-iaas/architecture.png)
 

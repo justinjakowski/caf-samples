@@ -33,8 +33,8 @@ Contoso has several options available when moving DevTest to Azure.
 
 The Development Leadership team has outlined what they want to achieve with this migration:
 
-- Quickly move DevTest out of on-premises data center.
-- Save costs by moving all DevTest environments out of their data center, and no longer purchase hardware to develop software.
+- Quickly move DevTest out of on-premises data center, and no longer purchase hardware to develop software.
+- Empower Developers to create and run their environments without involvement from IT.
 
 > ![NOTE]
 > Contoso will leverage the Pay-As-You-Go [Dev/Test subscription offer](https://azure.microsoft.com/en-us/offers/ms-azr-0023p/) for their environments. Each active Visual Studio subscriber on their team can use the Microsoft software included with their subscription on Azure Virtual Machines for DevTest at no extra charge. Contoso will just pay the Linux rate for VMs they run, even VMs with SQL Server, SharePoint Server, or other software that is normally billed at a higher rate. 
