@@ -51,18 +51,18 @@ After pinning down goals and requirements, Contoso designs and reviews a deploym
 ### Current architecture
 
 - VMs deployed to an on-premises data center managed by [vSphere](https://www.vmware.com/products/vsphere.html).
-- Workloads deployed on a VMware ESXi host cluster managed with [vCenter](https://www.vmware.com/products/vcenter-server.html), [vSan](https://www.vmware.com/products/vsan.html) and [NSX](https://www.vmware.com/products/nsx.html).
+- Workloads deployed on a VMware ESXi host cluster managed with [vCenter](https://www.vmware.com/products/vcenter-server.html), [vSan](https://www.vmware.com/products/vsan.html) and [NSX-T](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/index.html).
 
 ### Proposed architecture
 
 - Deploy AVS into the West US Azure region.
 - Connect the on-premises data center to AVS running in West US using [ExpressRoute](https://docs.microsoft.com/en-us/azure/vmware-cloudsimple/on-premises-connection).
 - Use Layer 2 stretched networks to connect the on-premises VMware environment to the AVS Private Cloud using an NSX Layer 2 VPN.
-- Migrate VMs to dedicated Azure VMware Solutions using [VMware Hybrid Cloud Extension (HCX)](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html).
+- Migrate VMs to dedicated Azure VMware Solutions using [(HCX)](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html).
 
 ![Migration process](/media/vmware-to-azure-migration-scenario/onpremises-stretched-network-expressroute.png)
 
->Note: The [Layer 2 stretched network](https://docs.microsoft.com/en-us/azure/vmware-cloudsimple/migration-layer-2-vpn) enables live migration of workloads from your on-premises VMware environment to the Private Cloud in Azure. With this stretched Layer 2 network, the subnet from on-premises will be available on the Private Cloud. After migration, new IP address assignment is not required for the VMs.
+>Note: The [Layer 2 stretched network](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-DD9C3316-D01C-4088-B3EA-84ADB9FED573.html) enables live migration of workloads from your on-premises VMware environment to the Private Cloud in Azure. With this stretched Layer 2 network, the subnet from on-premises will be available on the Private Cloud. After migration, new IP address assignment is not required for the VMs.
 
 ## Solution Review
 
@@ -70,7 +70,7 @@ Contoso evaluates the proposed design by putting together a pros and cons list.
 
 **Consideration** | **Details**
 --- | ---
-Pros | Bare metal VMware infrastructure with high performance. Infrastructure that is fully dedicated to Contoso and is physically isolated from infrastructure of other customers.<br/><br/>Since Contoso is using a rehost using VMware there is, no special configuration or migration complexity.<br/><br/>Contoso can take advantage of their investment in Software Assurance, using the Azure Hybrid Benefit and extended support for legacy Windows and SQL platforms.<br/><br/>Contoso will retain full control of the app VMs in Azure.
+Pros | Bare metal VMware infrastructure with high performance. Infrastructure that is fully dedicated to Contoso and is physically isolated from infrastructure of other customers.<br/><br/>Since Contoso is rehosting using VMware there is no special configuration or migration complexity.<br/><br/>Contoso can take advantage of their investment in Software Assurance, using the Azure Hybrid Benefit and extended support for legacy Windows and SQL platforms.<br/><br/>Contoso will retain full control of the app VMs in Azure.
 Cons | Contoso will need to continue supporting the app as VMware VMs rather than moving them to a managed service such as Azure App Service and Azure SQL Database.<br/><br/>Azure VMware Solutions are provisioned and priced based on a minimum of three large nodes rather than individual VMs in Azure IaaS. Learn more about the [pricing](https://azure.microsoft.com/en-us/pricing/details/azure-vmware-cloudsimple/) of AVS.
 
 ## Migration process
@@ -86,7 +86,7 @@ Contoso will move VMs to AVS using the VMware HCX tool. The VMs will run in an A
     ![Migration process](/media/vmware-to-azure-migration-scenario/onpremises-vmwarehcx-azure.png)
 
 > ![NOTE]
->  NSX-T is not a requirement, most environments will have standard VDS-based networking
+>  NSX-T is not a requirement on premesis, most environments will have standard VDS-based networking
 
 ## Scenarios steps
 
